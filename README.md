@@ -14,8 +14,8 @@ url = "https://petstore.swagger.io/v2/swagger.json"
 op = HttpOperation()
 print(op.request(url=url))
 
+
 ## or using example
-```python
 url = "https://petstore.swagger.io/v2/swagger.json"
 op = HttpOperation(url=url)
 print(op.request())
