@@ -20,6 +20,9 @@ MESSAGE = MessageType()
 
 CODE = CodeLine()
 
+#close log
+Environment.Shared().online()
+
 url = "https://petstore.swagger.io/v2/swagger.json"
 
 #op = HttpOperation()

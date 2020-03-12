@@ -24,3 +24,6 @@ print(op.request())
 ## close log 
 from environment import Environment
 Environment.Shared().online()
+
+##on terminal excute
+python lib/test_http.py
