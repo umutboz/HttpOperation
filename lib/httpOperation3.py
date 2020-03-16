@@ -21,7 +21,6 @@ import ssl
 
 # Own modules
 from abstract import Base
-from enums import CODING
 from enums import MESSAGETYPE
 
 
