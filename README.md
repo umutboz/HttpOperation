@@ -34,3 +34,24 @@ jsonData = op.request(url=url).jsonParse()
 
 op3 = HttpOperation()
 responseString = op3.fetch(url=url)
+
+## python3 httpOperation
+
+```python
+from httpOperation3 import HttpOperation3
+```
+
+```python
+url = "https://petstore.swagger.io/v2/swagger.json"
+op = HttpOperation3()
+print(op.fetch(url=url))
+
+
+## or using example
+op4 = HttpOperation3(url=url)
+print(op4.fetch())
+
+op5 = HttpOperation3()
+print(op5.fetch(url=url))
+
+print(jsonData["swagger"])
