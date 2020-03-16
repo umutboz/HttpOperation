@@ -34,10 +34,10 @@ jsonData = op.request(url=url).jsonParse()
 
 op3 = HttpOperation()
 responseString = op3.fetch(url=url)
+```
 
 
-
-## python3 httpOperation
+## python3 example
 
 ```python
 from httpOperation3 import HttpOperation3
@@ -49,7 +49,7 @@ op = HttpOperation3()
 print(op.fetch(url=url))
 ```
 
-## or using example
+
 ```python
 op4 = HttpOperation3(url=url)
 print(op4.fetch())
