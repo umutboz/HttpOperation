@@ -32,9 +32,5 @@ python lib/test_http.py
 op = HttpOperation()
 jsonData = op.request(url=url).jsonParse()
 
-#or builder with json parsing
-op = HttpOperation(url=url)
-jsonData = op.request().jsonParse()
-
 op3 = HttpOperation()
 responseString = op3.fetch(url=url)
