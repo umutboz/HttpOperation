@@ -28,7 +28,7 @@ from enums import MESSAGETYPE
 
 class HttpOperation(Base):
     _url = ""
-
+    _response = ""
 
     def __init__(self, url=None):
         Base.__init__(self)
@@ -39,7 +39,7 @@ class HttpOperation(Base):
             return None
         else:
             return self._url
-
+    
     def request(self,url=None):
         request_url = None
         if url != None:
@@ -50,7 +50,22 @@ class HttpOperation(Base):
             Base.log(self, message="HttpOperation " + "request : "
                       + " \error : \n url cannot be None", messageType=MESSAGETYPE.ERROR)
             return
-        print(request_url)
+        try:
+            resp = urllib2.urlopen(request_url)
+            dataString = resp.read().decode('utf-8')
+            jsonData = json.loads(dataString)
+            return jsonData
+        except urllib2.HTTPError as e:
+            print('HTTPError = ' + str(e.code))
+        except urllib2.URLError as e:
+            print('URLError = ' + str(e.reason))
+        except Exception as e:
+            print('generic exception: ' + str(e))
+        return None 
+
+        
+    def fetch(self,url=None):
+        request_url = None
         try:
             resp = urllib2.urlopen(request_url)
             dataString = resp.read().decode('utf-8')

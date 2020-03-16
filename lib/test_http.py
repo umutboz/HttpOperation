@@ -25,14 +25,11 @@ Environment.Shared().online()
 
 url = "https://petstore.swagger.io/v2/swagger.json"
 
-#op = HttpOperation()
-#print(op.request(url=url))
+op = HttpOperation()
+jsonData = op.request(url=url).jsonParse()
 
-op = HttpOperation(url=url)
-print(op.request())
+op2 = HttpOperation(url=url)
+jsonData = op2.request().jsonParse()
 
-import json
-'''
- jsonData = json.loads(dataString)
-            return jsonData
-'''            
+op3 = HttpOperation()
+responseString = op3.fetch(url=url)

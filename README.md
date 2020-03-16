@@ -12,13 +12,13 @@ from httpOperation import HttpOperation
 ```python
 url = "https://petstore.swagger.io/v2/swagger.json"
 op = HttpOperation()
-print(op.request(url=url))
+print(op.fetch(url=url))
 
 
 ## or using example
 url = "https://petstore.swagger.io/v2/swagger.json"
 op = HttpOperation(url=url)
-print(op.request())
+print(op.fetch())
 
 
 ## close log 
@@ -27,3 +27,14 @@ Environment.Shared().online()
 
 ##on terminal excute
 python lib/test_http.py
+
+#builder with json parsing
+op = HttpOperation()
+jsonData = op.request(url=url).jsonParse()
+
+#or builder with json parsing
+op = HttpOperation(url=url)
+jsonData = op.request().jsonParse()
+
+op3 = HttpOperation()
+responseString = op3.fetch(url=url)
